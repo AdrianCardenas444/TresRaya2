@@ -33,6 +33,10 @@ public class Juego {
                 juegoTerminado = true;
             } else {
                 cambiarJugador();
+                turnos--;
+            }
+            if(turnos == 0){
+                juegoTerminado = true;
             }
         }
     }
