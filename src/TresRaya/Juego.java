@@ -31,12 +31,14 @@ public class Juego {
             tablero.jugada(posicion, jugadorActivo.getSimbolo());
             if (tablero.comprobarVictoria(jugadorActivo.getSimbolo())){
                 juegoTerminado = true;
+                System.out.println("El Jugador " + jugadorActivo.getSimbolo() + " es el ganador.");
             } else {
                 cambiarJugador();
                 turnos--;
             }
             if(turnos == 0){
                 juegoTerminado = true;
+                System.out.println("Es un empate.");
             }
         }
     }

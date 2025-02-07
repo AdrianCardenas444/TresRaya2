@@ -3,8 +3,8 @@ package TresRaya;
 import java.util.Scanner;
 
 public class Jugador {
-    private Scanner sc = new Scanner(System.in);
-    private Tablero tablero;
+    private final Scanner sc = new Scanner(System.in);
+    private final Tablero tablero;
     private char simbolo;
 
     public Jugador(char simbolo) {
