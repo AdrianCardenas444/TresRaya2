@@ -27,6 +27,7 @@ public class Jugador {
             if (eleccion < 0 || eleccion > 9){
                 System.out.println("Opción no válida.");
             }
+
         } while(eleccion < 0 || eleccion > 9);
         switch (eleccion) {
             case 1 -> {
@@ -65,6 +66,7 @@ public class Jugador {
                 posicion[0] = 2;
                 posicion[1] = 2;
             }
+            default -> System.out.println("Opción no válida.");
         }
         return posicion;
     }
