@@ -1,4 +1,4 @@
-package TresRaya;
+package tictactoe;
 
 public class TresRaya {
 

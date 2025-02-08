@@ -1,4 +1,4 @@
-package TresRaya;
+package tictactoe;
 
 public class Tablero {
     private char[][] tablero;
@@ -42,10 +42,6 @@ public class Tablero {
                 }
             }
         }
-        if ((tablero[0][0] == simbolo && tablero[1][1] == simbolo && tablero[2][2] == simbolo) || tablero[0][2] == simbolo && tablero[1][1] == simbolo && tablero[2][0] == simbolo) {
-            return true;
-        } else {
-            return false;
-        }
+        return (tablero[0][0] == simbolo && tablero[1][1] == simbolo && tablero[2][2] == simbolo) || tablero[0][2] == simbolo && tablero[1][1] == simbolo && tablero[2][0] == simbolo;
     }
 }

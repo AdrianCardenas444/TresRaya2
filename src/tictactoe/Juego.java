@@ -1,4 +1,6 @@
-package TresRaya;
+package tictactoe;
+
+import java.util.Scanner;
 
 public class Juego {
     private Tablero tablero;
@@ -12,14 +14,18 @@ public class Juego {
         jugador2 = new Jugador('O');
         jugadorActivo = jugador1;
     }
-
+    
     public void iniciarJuego(){
         int turnos = 9;
         boolean juegoTerminado = false;
 
+        System.out.println("Nombre del jugador 1: ");
+        jugador1.setNombre(pedirNombre());
+        System.out.println("Nombre del jugador 2: ");
+        jugador2.setNombre(pedirNombre());
         while (!juegoTerminado){
             tablero.mostrarTablero();
-            System.out.println("Turno del jugador " + jugadorActivo.getSimbolo());
+            System.out.println("Turno de " + jugadorActivo.getNombre());
             int[] posicion;
 
             do {
@@ -31,7 +37,8 @@ public class Juego {
             tablero.jugada(posicion, jugadorActivo.getSimbolo());
             if (tablero.comprobarVictoria(jugadorActivo.getSimbolo())){
                 juegoTerminado = true;
-                System.out.println("El Jugador " + jugadorActivo.getSimbolo() + " es el ganador.");
+                tablero.mostrarTablero();
+                System.out.println("¡" + jugadorActivo.getNombre() + " es el ganador!");
             } else {
                 cambiarJugador();
                 turnos--;
@@ -41,10 +48,15 @@ public class Juego {
                 System.out.println("Es un empate.");
             }
         }
+
+    }
+
+    public static String pedirNombre() {
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
     }
 
     public void cambiarJugador() {
-        //si no hay ganador cmabia de jugador
         jugadorActivo = (jugadorActivo == jugador1) ? jugador2 : jugador1;
     }
 }
